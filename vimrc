@@ -265,10 +265,10 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " ----- jiangmiao/auto-pairs settings -----
 " Default settings:
 " Map <C-h> to delete brackets, quotes in pair
-g:AutoPairsMapCh, Default : 1
+let g:AutoPairsMapCh = 1
 " Map <CR> to insert a new indented line
-g:AutoPairsMapCR, Default : 1
+let g:AutoPairsMapCR = 1
 " Map <space> to insert a space after the opening character and before the
 " closing one
-g:AutoPairsMapSpace, Default : 1
+let g:AutoPairsMapSpace = 1
 
