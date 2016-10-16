@@ -19,16 +19,14 @@ Installation guide
 ------------------
 
 You can install it from CLI, just execute following command:
-
-.. code-block:: bash
+```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ets-labs/python-vimrc/master/setup.sh)"
-
+```
 or download setup.sh and execute in terminal:
-
-.. code-block:: bash
+```bash
   chmod u+x setup.sh
   ./setup.sh
-
+```
 Ignore error messages during execution of init script. Press enter and wait till all plugins are installed.
 
 Keep calm and fly Vim!
