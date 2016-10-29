@@ -185,7 +185,7 @@ set noswapfile
 set background=dark
 
 " Uncomment the next line if your terminal is not configured for solarized
-""let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 ""let g:molokai_original = 1
 
 " Set the colorscheme
