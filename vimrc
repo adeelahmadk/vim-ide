@@ -143,6 +143,19 @@ noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
+" Bind Toggle Line Numbering
+" Toggle between Absolute and Relative Line Numbers
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+    elseif(&number == 1)
+        set relativenumber
+    else
+        set number
+    endif
+endfunc
+
+nnoremap <C-m> :call NumberToggle()<cr>
 
 " Quicksave command
 noremap <C-Z> :update<CR>
