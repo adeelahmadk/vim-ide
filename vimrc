@@ -178,6 +178,12 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" resize current buffer by +/- 5
+nnoremap <c-left> :vertical resize -5<cr>
+nnoremap <c-down> :resize +5<cr>
+nnoremap <c-up> :resize -5<cr>
+nnoremap <c-right> :vertical resize +5<cr>
+
 " Easy navigations among tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
