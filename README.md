@@ -1,7 +1,7 @@
 Vim-IDE
 =======
 
-VIM Configuration for a lightw-eight IDE.
+VIM Configuration for a light-weight IDE.
 
 Requirements
 ------------
