@@ -20,7 +20,7 @@ Installation guide
 
 You can install it from CLI, just execute following command:
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ets-labs/python-vimrc/master/setup.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/cod3g3nki/vim-ide/master/setup.sh)"
 ```
 or download setup.sh and execute in terminal:
 ```bash
