@@ -3,6 +3,7 @@
 " ********************************************************
 
 " Need to be the first line.
+" Disable vi compatibility (emulation of old bugs)
 set nocompatible
 filetype off
 
@@ -23,7 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ----- Making Vim look good -----------------------------------------
 " To make Vim look good, install extra color schemes.
-Plugin 'flazz/vim-colorschemes'
+"
 " Download patched font from  https://github.com/abertsch/Menlo-for-Powerline
 " Fancy arrow symbols, requires a patched font
 " To install a patched font, download:
@@ -33,6 +34,10 @@ Plugin 'flazz/vim-colorschemes'
 "  cp Ubuntu\ Mono\ derivative\ Powerline.ttf ~/.local/share/fonts
 "  fc-cache -vf ~/.local/share/fonts
 " change your font in your terminal emulator.
+
+" one colorscheme pack to rule them all!
+Plugin 'flazz/vim-colorschemes'
+
 " Adds tons of information to your Vim statusbar.
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -55,6 +60,10 @@ Plugin 'majutsushi/tagbar'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 " https://github.com/ctrlpvim/ctrlp.vim
 Plugin 'kien/ctrlp.vim'
+
+" Fast, as-you-type, fuzzy-search code completion engine
+"Plugin 'Valloric/YouCompleteMe'
+
 " A plugin for opening header files automatically.
 " Simply type :AT to open up the alternate file (i.e., cache.h for cache.c)
 " For advanced plugin, check https://github.com/tpope/vim-projectionist
@@ -79,7 +88,6 @@ Plugin 'tpope/vim-fugitive'
 "  automatically.
 "  Detailed feature list on: https://github.com/jiangmiao/auto-pairs
 Plugin 'jiangmiao/auto-pairs'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -102,6 +110,11 @@ filetype plugin indent on    " required
 ""	 General Settings
 "==========================================
 syntax on
+
+"set UTF-8 encoding
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
 
 set backspace=indent,eol,start
 set number  " show line numbers
@@ -126,6 +139,11 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+
+" use indentation of previous line
+set autoindent
+" use intelligent indentation for C
+set smartindent
 
 set mouse=a
 
@@ -194,7 +212,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-
 "==========================================
 ""	 Plugin Settings
 "==========================================
@@ -230,10 +247,8 @@ let g:airline_detect_paste=1
 
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
-
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with <leader>t
@@ -254,6 +269,7 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
+
 augroup mySyntastic
 	au!
 	au FileType tex let b:syntastic_mode = "passive"
@@ -273,7 +289,31 @@ let g:easytags_suppress_ctags_warning = 1
 " Open/close tagbar with <leader>b
 nmap <silent> <leader>b :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
-autocmd BufEnter * nested :call tagbar#autoopen(0)
+"autocmd BufEnter * nested :call tagbar#autoopen(0)
+
+" ---- Valloric/YouCompleteMe settings -----
+" Fallback path to the config file
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/'
+" Where to search for the config file
+"let g:ycm_extra_conf_globlist = ['~/workspace/*','!~/*']
+"let g:ycm_enable_autocmd_on_diagnostic_change = 1
+
+" ----- aien/ctrlp.vim settings -----
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+let g:ctrlp_user_command = 'find %s -type f'
 
 " ----- airblade/vim-gitgutter settings -----
 " Required after having changed the colorscheme
