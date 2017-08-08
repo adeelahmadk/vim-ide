@@ -25,7 +25,8 @@ echo "${NORMAL}"
 echo
 echo
 printf "${GREEN}%s${NORMAL}\n" "Dependency:"
-printf "${BLUE}%s${NORMAL}\n" "  -Exuberant Ctags"
+printf "${BLUE}%s${NORMAL}\n" "  - Exuberant Ctags"
+printf "${BLUE}%s${NORMAL}\n" "  - curl"
 echo
 echo
 
