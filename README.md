@@ -14,6 +14,7 @@ Dependencies
 ------------
 
 - Exuberant Ctags
+- curl
 
 Installation guide
 ------------------
