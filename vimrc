@@ -181,8 +181,8 @@ vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
 
 " Quick quit command
-noremap <Leader>e :quit<CR>  " Quit current window
-noremap <Leader>E :qa!<CR>   " Quit all windows
+noremap <Leader>q :quit<CR>  " Quit current window
+noremap <Leader>Q :qa!<CR>   " Quit all windows
 
 " Indent code blocks
 " Go into visual mode (v), select several lines of code,
@@ -226,7 +226,11 @@ let g:solarized_termcolors=256
 
 " Set the colorscheme
 set t_Co=256
-color wombat256mod
+"colorscheme minimalist
+colorscheme SerialExperimentsLain
+"colorscheme onedark
+"color wombat256mod
+"colorscheme crayon
 
 " Showing line numbers and length
 set tw=79   " width of document (used by gd)
@@ -330,4 +334,6 @@ let g:AutoPairsMapCR = 1
 " Map <space> to insert a space after the opening character and before the
 " closing one
 let g:AutoPairsMapSpace = 1
+
+"let g:AutoPairsShortcutFastWrap = '<M-w>'
 
