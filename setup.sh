@@ -88,8 +88,15 @@ echo
   if [ ! -f $LOCAL/fonts/wUbuntu\ Mono\ derivative\ Powerline.ttf ]; then
       if [ ! -d $LOCAL/fonts ]; then
           mkdir -p $LOCAL/fonts
+          mkdir -p $LOCAL/fonts/UbuntuMono
+          mkdir -p $LOCAL/fonts/RobotoMono         
       fi
-      wget 'https://raw.githubusercontent.com/powerline/fonts/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf' -O $LOCAL/fonts/Ubuntu\ Mono\ derivative\ Powerline.ttf
+      wget 'https://raw.githubusercontent.com/powerline/fonts/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf' -O $LOCAL/fonts/UbuntuMono/Ubuntu\ Mono\ derivative\ Powerline.ttf
+      wget 'https://raw.githubusercontent.com/powerline/fonts/master/UbuntuMono/fonts.scale' -O $LOCAL/fonts/UbuntuMono/fonts.scale
+      wget 'https://raw.githubusercontent.com/powerline/fonts/master/UbuntuMono/fonts.dir' -O $LOCAL/fonts/UbuntuMono/fonts.dir
+      wget 'https://raw.githubusercontent.com/powerline/fonts/master/RobotoMono/Roboto%20Mono%20for%20Powerline.ttf' -O $LOCAL/fonts/RobotoMono/Roboto\ Mono\ for\ Powerline.ttf
+      wget 'https://raw.githubusercontent.com/powerline/fonts/master/RobotoMono/fonts.scale' -O $LOCAL/fonts/RobotoMono/fonts.scale
+      wget 'https://raw.githubusercontent.com/powerline/fonts/master/RobotoMono/fonts.dir' -O $LOCAL/fonts/RobotoMono/fonts.dir
   fi
 
 
