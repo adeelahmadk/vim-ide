@@ -202,6 +202,14 @@ nnoremap <c-down> :resize +5<cr>
 nnoremap <c-up> :resize -5<cr>
 nnoremap <c-right> :vertical resize +5<cr>
 
+" Toggle location list for errors
+"nnoremap <silent> <C-l> <C-o> :SyntasticReset<cr>
+nnoremap <silent> <C-l> <C-o> :lopen<cr>
+nnoremap <silent> <C-l> <C-c> :lclose<cr>
+" Navigate to next or previous error (Ctrl-e | Ctrl-E)
+nnoremap <silent> <C-e> :lne<cr>
+nnoremap <silent> <C-E> :lpr<cr>
+
 " Easy navigations among tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
