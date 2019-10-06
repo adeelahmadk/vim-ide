@@ -164,12 +164,11 @@ inoremap <C-n> :nohl<CR>
 " Bind Toggle Line Numbering
 " Toggle between Absolute and Relative Line Numbers
 function! NumberToggle()
-    if(&relativenumber == 1)
-        set norelativenumber
-    elseif(&number == 1)
-        set relativenumber
-    else
-        set number
+        if(&relativenumber == 1)
+                set number
+                set norelativenumber
+        else
+                set relativenumber
     endif
 endfunc
 
@@ -234,7 +233,8 @@ let g:solarized_termcolors=256
 " Set the colorscheme
 set t_Co=256
 "colorscheme minimalist
-colorscheme SerialExperimentsLain
+colorscheme twilight256
+"colorscheme SerialExperimentsLain
 "colorscheme onedark
 "color wombat256mod
 "colorscheme crayon
